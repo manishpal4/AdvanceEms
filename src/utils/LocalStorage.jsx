@@ -1,6 +1,7 @@
 const employees = [
   {
     id: 1,
+    name: "John",
     email: "employee1@example.com",
     password: "123",
     tasks: [
@@ -34,11 +35,17 @@ const employees = [
         date: "2024-12-10",
         category: "Presentation",
       },
-      // Add 7 more tasks with similar structure
     ],
+    taskCounts: {
+      active: 2,
+      newTask: 1,
+      completed: 1,
+      failed: 1,
+    },
   },
   {
     id: 2,
+    name: "Jane",
     email: "employee2@example.com",
     password: "123",
     tasks: [
@@ -72,11 +79,17 @@ const employees = [
         date: "2024-12-09",
         category: "Testing",
       },
-      // Add 7 more tasks with similar structure
     ],
+    taskCounts: {
+      active: 1,
+      newTask: 1,
+      completed: 1,
+      failed: 1,
+    },
   },
   {
     id: 3,
+    name: "Emily",
     email: "employee3@example.com",
     password: "123",
     tasks: [
@@ -90,11 +103,17 @@ const employees = [
         date: "2024-12-20",
         category: "Design",
       },
-      // Add 9 more tasks
     ],
+    taskCounts: {
+      active: 1,
+      newTask: 0,
+      completed: 0,
+      failed: 0,
+    },
   },
   {
     id: 4,
+    name: "Michael",
     email: "employee4@example.com",
     password: "123",
     tasks: [
@@ -108,11 +127,17 @@ const employees = [
         date: "2024-12-17",
         category: "Database",
       },
-      // Add 9 more tasks
     ],
+    taskCounts: {
+      active: 0,
+      newTask: 1,
+      completed: 0,
+      failed: 0,
+    },
   },
   {
     id: 5,
+    name: "Sarah",
     email: "employee5@example.com",
     password: "123",
     tasks: [
@@ -126,25 +151,33 @@ const employees = [
         date: "2024-12-11",
         category: "Documentation",
       },
-      // Add 9 more tasks
     ],
+    taskCounts: {
+      active: 0,
+      newTask: 0,
+      completed: 1,
+      failed: 0,
+    },
   },
 ];
 
 const admin = [
   {
     id: 1,
+    name: "Admin",
     email: "admin@example.com",
     password: "123",
   },
 ];
+
 
 export const setLocalStorage = () => {
   localStorage.setItem("employees", JSON.stringify(employees));
   localStorage.setItem("admin", JSON.stringify(admin));
 };
 
-export const getLoalStorage = () => {
+export const getLocalStorage = () => {
   const employees = JSON.parse(localStorage.getItem("employees"));
   const admin = JSON.parse(localStorage.getItem("admin"));
+  return{employees,admin}
 };
